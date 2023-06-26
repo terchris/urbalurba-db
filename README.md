@@ -12,6 +12,8 @@ docker compose for setting up psql for urbalurba
 docker network create --driver bridge --subnet 172.30.0.0/16 --gateway 172.30.0.1 urbalurba-network
 ```
 
+The urbalurba-network on the mac development machine is: --subnet 172.30.0.0/16 --gateway 172.30.0.1
+For the production server on OCI the network is: --subnet 172.40.0.0/16 --gateway 172.40.0.1
 
 1. update the initdb/init.sql file with the correct database name, username and password.
 
