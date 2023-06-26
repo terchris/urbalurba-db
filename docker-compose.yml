@@ -1,26 +1,26 @@
 # docker-compose.yml for urbalurba database running in docker
+# NB on the host the postgresql port 5435 must be free
 version: '3.8'
+
 services:
-  urbalurba-db:
-    container_name: urbalurba-db
+  urbalurba_db:
+    container_name: urbalurba_db
     image: postgres:14.1-alpine
     restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
-      - POSTGRES_PORT=${DATABASE_PORT}
+      - POSTGRES_PASSWORD=Smartbygutta01
     ports:
-      - "${DATABASE_PORT}:${DATABASE_PORT}"
+      - "5435:5432"
     volumes:
       - urbalurba-db-volume:/var/lib/postgresql/data
       - ./initdb:/docker-entrypoint-initdb.d
-    command: postgres -c 'listen_addresses=*' -p ${DATABASE_PORT}
+
     networks:
       - urbalurba-network
 
 volumes:
   urbalurba-db-volume:
-    name: urbalurba-db
+    name: urbalurba_db_volume
     driver: local
 
 networks:
