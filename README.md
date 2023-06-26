@@ -6,7 +6,11 @@ docker compose for setting up psql for urbalurba
 
 ## Installation
 
+0. Create a network for the database server to join. This is not necessary if you already have a network that you want to use.
+
+```bash
 docker network create --driver bridge --subnet 172.30.0.0/16 --gateway 172.30.0.1 urbalurba-network
+```
 
 
 1. update the initdb/init.sql file with the correct database name, username and password.
