@@ -1,0 +1,29 @@
+# docker-compose.yml for urbalurba database running in docker
+version: '3.8'
+
+services:
+  urbalurba-db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+    expose:
+      - "${DATABASE_PORT}"
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+    volumes:
+      - urbalurba-db:/var/lib/postgresql/data
+    command: postgres -c 'listen_addresses=*'
+    networks:
+      - urbalurba-network
+
+volumes:
+  urbalurba-db:
+    driver: local
+
+networks:
+  urbalurba-network:
+    driver: bridge
+
