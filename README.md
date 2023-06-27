@@ -1,10 +1,22 @@
-# urbalurba-db README.md file
+# urbalurba_db README.md file
 docker compose for setting up psql for urbalurba
 
 
 
 
+
+
 ## Installation
+
+When running the urbalurba_db we do this from the folder named urbalurba_containers.
+In urbalurba_containers create folder urbalurba_db and change to this folder.
+Copy the repository using:
+```bash
+git clone https://github.com/terchris/urbalurba_db.git .
+```
+
+
+
 
 0. Create a network for the database server to join. This is not necessary if you already have a network that you want to use.
 
