@@ -12,7 +12,7 @@ When running the urbalurba_db we do this from the folder named urbalurba_contain
 In urbalurba_containers create folder urbalurba_db and change to this folder.
 Copy the repository using:
 ```bash
-git clone https://github.com/terchris/urbalurba_db.git .
+git clone https://github.com/terchris/urbalurba-db.git .
 ```
 
 
@@ -44,7 +44,7 @@ docker-compose up -d
 
 1. After installing the database server a database and user is created by running the initdb/init.sql script.
 
-2. The container will be named urbalurba_db and will join the network urbalurba-network. If the network does not exist it will be created.
+2. The container will be named urbalurba-db and will join the network urbalurba-network. If the network does not exist it will be created.
 
 3. The database will be stored in the volume urbalurba_db_volume. If the volume does not exist it will be created.
 
@@ -55,7 +55,7 @@ docker-compose up -d
 
 ```bash
 
-docker exec -it urbalurba_db psql -U strapi -d urbalurba_db
+docker exec -it urbalurba_db psql -U strapi -d urbalurba-db
 
 ```
 
