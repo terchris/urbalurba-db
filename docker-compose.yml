@@ -3,8 +3,8 @@
 version: '3.8'
 
 services:
-  urbalurba_db:
-    container_name: urbalurba_db
+  urbalurba-db:
+    container_name: urbalurba-db
     image: postgres:14.1-alpine
     restart: always
     environment:
@@ -20,7 +20,7 @@ services:
 
 volumes:
   urbalurba-db-volume:
-    name: urbalurba_db_volume
+    name: urbalurba-db-volume
     driver: local
 
 networks:
