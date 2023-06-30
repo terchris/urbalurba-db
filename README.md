@@ -55,30 +55,27 @@ docker-compose up -d
 
 ```bash
 
-docker exec -it urbalurba_db psql -U strapi -d urbalurba-db
+docker exec -it urbalurba-db psql -U strapi -d urbalurba-db
 
 ```
 
-list the tables in the database
+
+2. Using psql inside the container
 
 ```bash
 
-\dt
+psql -U strapi -d urbalurba_db
 
 ```
 
-2. Using psql
+If you are able to connect to the database server you will see the following prompt:
+
+```bash
+psql (14.1)
+Type "help" for help.
 
 ```bash
 
-psql -h localhost -p 5432 -U strapi -d urbalurba_db
+This means that it is all cofigured and working properly.
+Exit psql by typing \q and pressing enter.
 
-```
-
-list the tables in the database
-
-```bash
-
-\dt
-
-```
