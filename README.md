@@ -45,6 +45,8 @@ docker network create --driver bridge --subnet 172.40.0.0/16 --gateway 172.40.0.
 docker compose up 
 
 ```
+On dag you will need to use sudo docker compose up
+
 You will see the output - if you see something like this then the database i created and ready:
 ```
  /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01_create_database.sql
