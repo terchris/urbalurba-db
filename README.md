@@ -8,7 +8,7 @@ docker compose for setting up psql for urbalurba
 
 ## Installation
 
-When running the urbalurba-db we do this from the folder named urbalurba_containers.
+When running the urbalurba-db we do this from the folder named urbalurba-containers.
 On dag the folder is /home/terchris/urbalurba-containers on mac it is /Users/tec/learn/urbalurba2023/urbalurba-containers
 
 In urbalurba_containers clone the repository
@@ -72,7 +72,7 @@ urbalurba_db  | DO
 
 ```bash
 
-docker exec -it urbalurba-db psql -U strapi -d urbalurba-db
+docker exec -it urbalurba-db psql -U strapi -d urbalurba_db
 
 ```
 
@@ -95,4 +95,8 @@ Type "help" for help.
 
 This means that it is all cofigured and working properly.
 Exit psql by typing \q and pressing enter.
+
+## where are the data stored
+The database is stored in the volume named urbalurba-db-volume
+make surte to make backups
 
