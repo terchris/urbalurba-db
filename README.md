@@ -8,11 +8,13 @@ docker compose for setting up psql for urbalurba
 
 ## Installation
 
-When running the urbalurba_db we do this from the folder named urbalurba_containers.
-In urbalurba_containers create folder urbalurba_db and change to this folder.
+When running the urbalurba-db we do this from the folder named urbalurba_containers.
+On dag the folder is /home/terchris/urbalurba-containers on mac it is /Users/tec/learn/urbalurba2023/urbalurba-containers
+
+In urbalurba_containers clone the repository
 Copy the repository using:
 ```bash
-git clone https://github.com/terchris/urbalurba-db.git .
+git clone https://github.com/terchris/urbalurba-db.git urbalurba-db
 ```
 
 
