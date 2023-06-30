@@ -22,29 +22,42 @@ git clone https://github.com/terchris/urbalurba-db.git urbalurba-db
 
 0. Create a network for the database server to join. This is not necessary if you already have a network that you want to use.
 
-```bash
-docker network create --driver bridge --subnet 172.30.0.0/16 --gateway 172.30.0.1 urbalurba-network
-
-docker network create --driver bridge --subnet 172.40.0.0/16 --gateway 172.40.0.1 urbalurba-network
-
-
-```
-
 The urbalurba-network on the mac development machine is: --subnet 172.30.0.0/16 --gateway 172.30.0.1
 For the production server on OCI the network is: --subnet 172.40.0.0/16 --gateway 172.40.0.1
 
-1. update the initdb/init.sql file with the correct database name, username and password.
+on mac use this:
+```bash
+docker network create --driver bridge --subnet 172.30.0.0/16 --gateway 172.30.0.1 urbalurba-network
+```
+on dag use this:
+```bash
+docker network create --driver bridge --subnet 172.40.0.0/16 --gateway 172.40.0.1 urbalurba-network
+
+```
+
+
+
+1. The database is urbalurba_db and the user is strapi - this and the password is hardcoded in the folder initdb
 
 2. Run the following command to start the database server:
 ```bash
 
-docker-compose up -d
+docker compose up 
 
 ```
+You will see the output - if you see something like this then the database i created and ready:
+```
+ /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01_create_database.sql
+urbalurba_db  | CREATE DATABASE
+urbalurba_db  | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/02_create_user.sql
+urbalurba_db  | psql:/docker-entrypoint-initdb.d/02_create_user.sql:10: NOTICE:  User created successfully
+urbalurba_db  | DO
+``` 
+
 
 ## This is what happens when you run the docker-compose up -d command
 
-1. After installing the database server a database and user is created by running the initdb/init.sql script.
+1. After installing the database server a database and user is created by running the script(s) in initdb folder.
 
 2. The container will be named urbalurba-db and will join the network urbalurba-network. If the network does not exist it will be created.
 
