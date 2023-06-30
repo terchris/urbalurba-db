@@ -1,4 +1,4 @@
-# urbalurba_db README.md file
+# urbalurba-db README.md file
 docker compose for setting up psql for urbalurba
 
 
