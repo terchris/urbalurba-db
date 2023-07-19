@@ -6,6 +6,9 @@ Setup using github actions and portainer
 When a new commit to main is done then github actions build the docker image and push it to the github docker registry.
 Image is built for both amd64 and arm64 [see docker-build-and-push.yml](.github/workflows/docker-build-and-push.yml)
 
+NB create Personal access tokens (classic) for github actions to be able to push to the docker registry. The password: ${{ secrets.GITHUB_TOKEN }} does not work. go to: https://github.com/settings/tokens to set it up.
+
+
 To use it from portainer do:
 
 
