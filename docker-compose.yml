@@ -7,7 +7,7 @@ version: '3.8'
 services:
   urbalurba_db:
     container_name: urbalurba_db
-    image: postgres:14.1-alpine
+    image: ghcr.io/terchris/urbalurba-db:latest
     restart: always
     environment:
       - POSTGRES_PASSWORD=Smartbygutta01
@@ -17,6 +17,7 @@ services:
       - urbalurba-db-volume:/var/lib/postgresql/data
     networks:
       - urbalurba-network
+
 
 volumes:
   urbalurba-db-volume:
