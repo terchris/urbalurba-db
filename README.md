@@ -1,11 +1,16 @@
 # urbalurba-db README.md file
 docker compose for setting up psql for urbalurba
 
+Setup using github actions and portainer
+
+When a new commit to main is done then github actions build the docker image and push it to the github docker registry.
+Image is built for both amd64 and arm64 [see docker-build-and-push.yml](.github/workflows/docker-build-and-push.yml)
+
+To use it from portainer do:
 
 
 
-
-
+-------------------------- Old manual setup -----------------------------
 ## Installation
 
 When running the urbalurba-db we do this from the folder named urbalurba-containers.
